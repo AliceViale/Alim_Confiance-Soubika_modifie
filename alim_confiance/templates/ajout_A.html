@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='alim_confiance/static/style.css') }}"
+    <title>Ajouter un établissement ou une inspection</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+      
+            <h1>Ajouter un établissement</h1>
+            <hr> 
+      
+            <form action="/ajout" method="POST">
+              <div class="form-group">
+                <label for="myfile">Importer un csv</label>
+                <input type="file" id="myfile" name="myfile">
+              </div>
+
+              </div>  
+              <div class="form-group">
+                <label>Nom de l'établissement</label>
+                <input type="text" class="form-control" id="nom_e" name="nom_e" placeholder="Nom de l'établissement">
+              </div>
+
+              <div class="form-group">
+                <label>Siret</label>
+                <input type="text" class="form-control" id="siret_e" name="siret_e" placeholder="Siret">
+              </div>
+
+              <div class="form-group">
+                <label>Adresse</label>
+                <input type="text" class="form-control" id="adresse_e" name="adresse_e" placeholder="Adresse">
+              </div>
+
+              <div class="form-group">
+                <label>Coordonnées GPS (latitude,longitude)</label>
+                <input type="text" class="form-control" id="coordonnees_e" name="coordonnees_e" placeholder="Coordonnées GPS">
+              </div>
+
+              <div class="form-group">
+                <label>Code postal</label>
+                <input type="text" class="form-control" id="cp_e" name="cp_e" placeholder="Code postal">
+              </div>
+
+              <div class="form-group">
+                <label>Commune</label>
+                <input type="text" class="form-control" id="commune_e" name="commune_e" placeholder="Commune">
+              </div>
+
+              <div class="form-group">
+                <label>N° d'agrément</label>
+                <input type="text" class="form-control" id="agrement_e" name="agrement_e" placeholder="N° d'agrément">
+              </div>
+
+              <div class="form-group">
+                <label>Activité</label>
+                <input type="text" class="form-control" id="activité_e" name="activité_e" placeholder="Activité">  
+              </div>
+              <button type="submit" class="btn btn-primary">Enregistrer</button>
+      
+            </form>
+          </div>
+
+          </div>
+        </div>
+    </div>
+</main>    
+</body>
+</html>

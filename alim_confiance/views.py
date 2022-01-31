@@ -1,18 +1,14 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Etablissement, Inspection
+from .models import Etablissement
 from alim_confiance import db
 
 views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
 def accueil():
-    return render_template("accueil.html")
+    return render_template("ajout.html")
 
-@views.route('/listeE', methods=['GET', 'POST'])
-def listeEtablissement():
-    return render_template("liste_E.html")
-
-@views.route('/ajoutE', methods=['GET', 'POST'])
+@views.route('/ajout', methods=['GET', 'POST'])
 def ajoutEtablissement():
 
     if request.method == "POST":
@@ -42,11 +38,8 @@ def ajoutEtablissement():
             db.session.commit()
             return redirect("/listeE")
         except:
-            return "Problème alors que tu as voulu ajouter un établissement !"
+            return "Erreur lors de l'enregistrement"
     else :
         etablissements = Etablissement.query.order_by(Etablissement.id)
-        return render_template("ajout_E.html")
+        return render_template("ajout.html")
 
-@views.route('/prediction', methods=['GET', 'POST'])
-def prediction():
-    return render_template("prediction.html")
