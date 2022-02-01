@@ -1,0 +1,9 @@
+body {
+    background-color:rgba(232, 227, 227, 1);
+  }
+.navbar-custom {
+    background-color: rgba(75, 106, 190, 1);
+}
+.nav-item{
+  color: white;
+}

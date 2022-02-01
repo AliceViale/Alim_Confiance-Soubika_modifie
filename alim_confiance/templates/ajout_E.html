@@ -1,15 +1,11 @@
-{% extends 'base_A.html' %}
+{% extends "base.html" %}{% block title %}Ajouter des établissements{% endblock %} {% block content%}
 
-{% block head %}
-{% endblock %}
-
-{% block body %}
     <div class="container">
         <h1>On va ajouter des établissements</h1>
         <br><br>
         
 
-        <form action = "/ajout" METHOD = "POST">
+        <form action = "/listeE" METHOD = "POST">
             <input type = "text" placeholder = "Nom" name = "nom">
             <input type = "text" placeholder = "Adresse" name = "adresse">
             <input type = "text" placeholder = "Code Postal" name = "code postal">
@@ -27,5 +23,6 @@
 
 
     </div>
-{% endblock %}
 
+
+{% endblock %}

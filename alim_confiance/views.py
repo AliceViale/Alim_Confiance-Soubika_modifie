@@ -3,12 +3,13 @@ from .models import Etablissement
 from alim_confiance import db
 
 views = Blueprint('views', __name__)
-
+#vue avec la page d'ajout en page d'accueil pour le moment
 @views.route('/', methods=['GET', 'POST'])
 def accueil():
-    return render_template("ajout.html")
-
-@views.route('/ajout', methods=['GET', 'POST'])
+    return render_template("ajout_final.html")
+#vue de la page d'ajout établissement
+##fonction pour remplir la BDD avec le formulaire html
+@views.route('/ajout_final', methods=['GET', 'POST'])
 def ajoutEtablissement():
 
     if request.method == "POST":
@@ -41,5 +42,5 @@ def ajoutEtablissement():
             return "Erreur lors de l'enregistrement"
     else :
         etablissements = Etablissement.query.order_by(Etablissement.id)
-        return render_template("ajout.html")
+        return render_template("ajout_final.html")
 

@@ -4,16 +4,16 @@
 {% endblock %}
 
 {% block body %}
-
+<!-- Formulaire d'ajout établissement -->
 <main>
     <div class="container">
         <div class="row">
           <div class="col">
-      
+
             <h1>Ajouter un établissement</h1>
             <hr> 
       
-            <form action="/liste" method="POST">
+            <form action="/ajout_final" method="POST">
               <div class="form-group">
                 <label for="myfile">Importer un csv</label>
                 <input type="file" id="myfile" name="myfile">
@@ -60,6 +60,11 @@
                 <input type="text" class="form-control" id="activité_e" name="activite" placeholder="Activité">  
               </div>
 
+              <div class="form-group">
+                <label>Catégorie frais</label>
+                <input type="text" class="form-control" id="categorie" name="categorie_frais" placeholder="Catégorie frais">  
+              </div>
+
               <input type = "submit" value = "Enregistrer" name = "btn btn-secondary">
       
             </form>
@@ -68,6 +73,7 @@
           </div>
         </div>
     </div>
+    
 </main>    
 
 {% endblock %}
